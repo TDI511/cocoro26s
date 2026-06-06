@@ -52,12 +52,12 @@ class RocketModel:
         
         self.platf_w =  8
         self.platf_h  = 2
-        self.platf_rh = 4 #
+        self.platf_rh = 3.4 #
 
         self.ry = self.platf_h + self.platf_rh # ref coord y, m
         self.rx = rx                           # ref coord x, m
         self.rv = rv                           # ref speed (drx/dt), m/sec
-        self.rytol = 1 # m 
+        self.rytol = 0.4 # m 
         
         # Input constraints (Control):
         self.max_Fe  = 16118.518518518518  # H, 0<Fe<max_Fe
@@ -81,7 +81,7 @@ class RocketModel:
         
         # Landing criteria
         self.ref = np.array([self.rx, self.ry, self.rv, 0.0, 0.0, 0.0]) # Reference
-        self.tol = np.array([2, 0.5, 0.1, 0.1, 0.04, 0.02]) # Landing tolerances +/-
+        self.tol = np.array([2, 0.28, 0.1, 0.1, 0.04, 0.02]) # Landing tolerances +/-
   
         # State trajectories and Control stored as column vectors.
         self.X  = np.zeros((6, self.Nmax + 1))
