@@ -1,5 +1,5 @@
 import numpy as np
-import cvxpy as cp
+#import cvxpy as cp
 
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
